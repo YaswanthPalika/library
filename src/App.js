@@ -1,21 +1,20 @@
 import './App.css';
 import {Component} from 'react'
+import { HashRouter as Router,Route,Switch ,Redirect} from 'react-router-dom';
+import Login from './components/login/login';
+import NotFound from './components/notFound/notFound';
 
 class App extends Component{
-    state = {msg:""}
-
-    APIcall = () => {
-        fetch("http://localhost:9000/")
-            .then(res => res.text())
-            .then(res => this.setState({msg: res}))
-    }
-
     render(){
-        const {msg} = this.state
         return (
             <div>
-                <h1>hello world {msg}</h1>
-                <button onClick = {this.APIcall}>click</button>
+                <Router>
+                    <Switch>
+                        <Route exact path='/' component={Login}/>
+                        <Route path="/not-found" component={NotFound} />
+                        <Redirect to="not-found" />
+                    </Switch>
+                </Router>
             </div>
         )
     }

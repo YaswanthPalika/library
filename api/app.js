@@ -3,15 +3,18 @@ const cors = require("cors");
 const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
 const path = require("path");
-const databasePath = path.join(__dirname, "covid19IndiaPortal.db");
-let database = null;
+
+const databasePath = path.join(__dirname, "library.db");
+
+
+let db = null;
 const app = express();
 app.use(express.json());
 app.use(cors());
 
 const initializeDbAndServer = async () => {
   try {
-    database = await open({
+    db = await open({
       filename: databasePath,
       driver: sqlite3.Database,
     });
@@ -25,9 +28,9 @@ initializeDbAndServer();
 
 const convertStateDbObjectToResponseObject = (dbObject) => {
   return {
-    stateId: dbObject.state_id,
-    stateName: dbObject.state_name,
-    population: dbObject.population,
+    mis: dbObject.mis,
+    password: dbObject.password,
+    email: dbObject.email,
   };
 };
 
@@ -36,8 +39,8 @@ app.get("/",async (request,response) => {
     SELECT
       *
     FROM
-      state;`;
-  const statesArray = await database.all(getStatesQuery);
+      users;`;
+  const statesArray = await db.all(getStatesQuery);
   response.send(
     statesArray.map((eachState) =>
       convertStateDbObjectToResponseObject(eachState)
@@ -45,5 +48,19 @@ app.get("/",async (request,response) => {
   );
 });
 
+app.post('/',async (request,response)=>{
+  const {mis,password} = request.body;
+  console.log(request.body)
+  const query = `select * from users where mis = ${mis} ;`;
+  console.log(query)
   
+  const result =await db.get(query);
+  if(result.password === password){
+    response.send("loged in !");
+  }else{
+    console.log(password,result.password);
+    response.send('nooo');
+  }
+})
+
 module.exports = app;

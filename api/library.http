@@ -1,0 +1,8 @@
+###
+POST  http://localhost:9000/
+Content-Type: application/json
+
+{
+    "mis" : 111916068,
+    "password" : "yaswanth"
+}
