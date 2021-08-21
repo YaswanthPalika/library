@@ -1,0 +1,74 @@
+.logo{
+    height: 70px;
+    width: 70px;
+    margin-right: 20px;
+}
+
+.navbar{
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mis{
+    color: indigo;
+}
+
+.nav-search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-input-box{
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.search-input{
+    border: transparent;
+    width: 270px;
+    outline: none;
+}
+
+.log-out{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.loglogo{
+    height: 70px;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.library-logo{
+    display: flex;
+    flex-direction: row;
+}
+
+
+/*for book list-*/
+
+ul{
+    display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+
+}
+
+.loader{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

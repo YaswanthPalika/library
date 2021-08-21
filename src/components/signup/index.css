@@ -1,24 +1,30 @@
-.input-container{
-    margin: 10px;
-}
-
-.login{
+.sign-up-form{
     height: 100vh;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.buttons{
+
+.input-component{
     margin: 10px;
+    width: 30vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-button{
-    width: 5vw;
+
+.submit-button{
+    width: 30vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.errmsg{
-    color:red;
+.msg{
+    color:rgb(3, 158, 80);
+}
+
+.err{
+    color: red;
 }
