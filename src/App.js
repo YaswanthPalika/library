@@ -5,7 +5,7 @@ import Login from './components/login/login';
 import NotFound from './components/notFound/notFound';
 import Books  from './components/books';
 import Signup from './components/signup';
-import Bookdetails from './components/book';
+import Bookdetails from './components/bookdetails'
 let misNumber =null
 
 class App extends Component{

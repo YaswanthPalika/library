@@ -1,0 +1,28 @@
+.get-book-true{
+    background-color: greenyellow;
+}
+.return-book-true{
+    background-color: red;
+}
+
+.bookDetailsBox{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bdetails{
+    width: 35vw;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.bbox{
+    display: flex;
+    flex-direction: row;
+}
